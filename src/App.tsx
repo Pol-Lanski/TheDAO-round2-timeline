@@ -102,9 +102,9 @@ const phaseNav = [
 ];
 
 const roundCalendar = [
-  { when: 'Now → Sep 13', title: 'Build the foundation', text: 'Add RFPs and grants. Working target: roughly 20 initiatives live for launch.', tone: 'blue' },
-  { when: 'Sep 13', title: 'Announce Round 2', text: 'The dApp goes public. Donations stay disabled until the legal terms are cleared.', tone: 'red' },
-  { when: 'Sep 13 → Jan 31', title: 'Fundraise nonstop', text: 'Sponsor pledges, direct donations after legal clearance, and big-player conversations.', tone: 'blue' },
+  { when: 'Now → Sep 15', title: 'Build the foundation', text: 'Add RFPs and grants. Working target: roughly 20 initiatives live for launch.', tone: 'blue' },
+  { when: 'Sep 15', title: 'Announce Round 2', text: 'The dApp goes public. Donations stay disabled until the legal terms are cleared.', tone: 'red' },
+  { when: 'Sep 15 → Jan 31', title: 'Fundraise nonstop', text: 'Sponsor pledges, direct donations after legal clearance, and big-player conversations.', tone: 'blue' },
   { when: 'Nov 15 → ~Dec 3', title: 'Round 2 vote', text: 'Badge holders rank initiatives through a participatory budgeting allocation.', tone: 'green' },
   { when: 'December → mid-January', title: 'Final funding push', text: 'Initiatives remain open so unfunded work gets one last chance to reach its goal.', tone: 'blue' },
   { when: 'End of January', title: 'Wind down', text: 'Fundraising stops, unfunded initiatives close, and learning feeds preparation for Round 3.', tone: 'red' },
@@ -123,7 +123,7 @@ const resources: Resource[] = [
     description: 'The working public calendar and the curator decisions that lock the round in stages.',
     status: 'ready', statusLabel: 'Working calendar',
     audiences: ['researcher', 'co-creator'],
-    items: ['Now to September 13: build toward roughly 20 live initiatives.', 'September 13: announce and open the dApp; keep donations disabled pending legal clearance.', 'September 13 to end of January: continuous fundraising.', 'November 15 to about December 3: participatory budgeting vote.', 'End of January: close unfunded initiatives and prepare Round 3.'],
+    items: ['Now to September 15: build toward roughly 20 live initiatives.', 'September 15: announce and open the dApp; keep donations disabled pending legal clearance.', 'September 15 to end of January: continuous fundraising.', 'November 15 to about December 3: participatory budgeting vote.', 'End of January: close unfunded initiatives and prepare Round 3.'],
     note: 'Dates and parameters are working plans from the curator draft and may change through the August, September and October decisions.',
   },
   {
@@ -366,7 +366,7 @@ export default function Home() {
 
         <div className="round-rules" aria-label="Working Round 2 headline dates and targets">
           <div><strong>~20</strong><span>initiatives targeted for launch day</span></div>
-          <div><strong>Sep 13</strong><span>dApp announcement; donations wait for legal</span></div>
+          <div><strong>Sep 15</strong><span>dApp announcement; donations wait for legal</span></div>
           <div><strong>End of Jan</strong><span>working fundraising close and wind-down</span></div>
         </div>
       </section>
@@ -443,7 +443,7 @@ export default function Home() {
               </section>
 
               <div className="phase-output"><span>Phase output</span><strong>A defined initiative ready for co-funding</strong></div>
-              <aside className="foundation-target"><span>Launch target</span><strong>Build the board toward roughly 20 live initiatives by September 13.</strong></aside>
+              <aside className="foundation-target"><span>Launch target</span><strong>Build the board toward roughly 20 live initiatives by September 15.</strong></aside>
             </div>
             <ResourceShelf phase={1} stakeholder={stakeholder} onOpen={setOpenResource} />
           </article>
