@@ -101,31 +101,7 @@ const phaseNav = [
   { number: '04', label: 'Deliver', title: 'Implement and measure adoption' },
 ];
 
-const roundCalendar = [
-  { when: 'Now → Sep 15', title: 'Build the foundation', text: 'Add RFPs and grants. Working target: roughly 20 initiatives live for launch.', tone: 'blue' },
-  { when: 'Sep 15', title: 'Announce Round 2', text: 'The dApp goes public. Donations stay disabled until the legal terms are cleared.', tone: 'red' },
-  { when: 'Sep 15 → Jan 31', title: 'Fundraise nonstop', text: 'Sponsor pledges, direct donations after legal clearance, and big-player conversations.', tone: 'blue' },
-  { when: 'Nov 15 → ~Dec 3', title: 'Round 2 vote', text: 'Badge holders rank initiatives through a participatory budgeting allocation.', tone: 'green' },
-  { when: 'December → mid-January', title: 'Final funding push', text: 'Initiatives remain open so unfunded work gets one last chance to reach its goal.', tone: 'blue' },
-  { when: 'End of January', title: 'Wind down', text: 'Fundraising stops, unfunded initiatives close, and learning feeds preparation for Round 3.', tone: 'red' },
-];
-
-const decisionCalendar = [
-  ['Aug 31', 'Direction, execution plan and high-level timeline'],
-  ['Sep 23', 'Voting algorithm, operator, budget and eligibility floor'],
-  ['Oct 28', 'Pool size, caps, scope, donation split and round parameters'],
-  ['January', 'Reconfirm the discretionary give-back plan and announce it'],
-];
-
 const resources: Resource[] = [
-  {
-    id: 'round-calendar', phase: 1, label: 'Calendar', title: 'Round 2 dates and decisions',
-    description: 'The working public calendar and the curator decisions that lock the round in stages.',
-    status: 'ready', statusLabel: 'Working calendar',
-    audiences: ['researcher', 'co-creator'],
-    items: ['Now to September 15: build toward roughly 20 live initiatives.', 'September 15: announce and open the dApp; keep donations disabled pending legal clearance.', 'September 15 to end of January: continuous fundraising.', 'November 15 to about December 3: participatory budgeting vote.', 'End of January: close unfunded initiatives and prepare Round 3.'],
-    note: 'Dates and parameters are working plans from the curator draft and may change through the August, September and October decisions.',
-  },
   {
     id: 'problem-prompts', phase: 1, label: 'Checklist', title: 'Problem-mapping prompts',
     description: 'Questions for turning a broad security concern into a defined initiative.',
@@ -323,12 +299,6 @@ export default function Home() {
           <img src={assetUrl('thedao-mark.svg')} alt="" />
           <span>TheDAO <strong>Security Fund</strong></span>
         </a>
-        <div className="header-actions">
-          <span className="draft-pill"><i /> Working process</span>
-          <a className="map-link" href={assetUrl('round-2-process-map.pdf')} target="_blank" rel="noreferrer">
-            Process map <span aria-hidden="true">↗</span>
-          </a>
-        </div>
       </header>
 
       <section className="hero" id="top">
@@ -341,7 +311,6 @@ export default function Home() {
         <section className="stakeholder-picker" aria-labelledby="stakeholder-title">
           <div className="picker-heading">
             <p className="eyebrow" id="stakeholder-title">Choose your path</p>
-            <p>The process stays visible. Your role becomes the focus.</p>
           </div>
           <div className="stakeholder-options" role="group" aria-label="Choose a stakeholder view">
             {stakeholders.map((option) => (
@@ -361,35 +330,7 @@ export default function Home() {
         </section>
         <div className="hero-actions">
           <a className="primary-button" href="#phase-1">Start the journey <span>↓</span></a>
-          <span className="legal-note">Working draft - legal approval remains pending</span>
         </div>
-
-        <div className="round-rules" aria-label="Working Round 2 headline dates and targets">
-          <div><strong>~20</strong><span>initiatives targeted for launch day</span></div>
-          <div><strong>Sep 15</strong><span>dApp announcement; donations wait for legal</span></div>
-          <div><strong>End of Jan</strong><span>working fundraising close and wind-down</span></div>
-        </div>
-      </section>
-
-      <section className="calendar-section" aria-labelledby="calendar-title">
-        <div className="calendar-heading">
-          <div><p className="eyebrow">The round calendar</p><h2 id="calendar-title">One process.<br />Two clocks.</h2></div>
-          <p>The initiative lifecycle below runs alongside a public fundraising calendar and a staged curator decision calendar.</p>
-        </div>
-        <div className="calendar-track">
-          {roundCalendar.map((item, index) => (
-            <article className={`calendar-card ${item.tone}`} key={item.title}>
-              <span className="calendar-index">{String(index + 1).padStart(2, '0')}</span>
-              <time>{item.when}</time>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-        <section className="decision-calendar" aria-labelledby="decision-title">
-          <div><span>Curator checkpoints</span><h3 id="decision-title">Parameters lock in over time</h3></div>
-          <ol>{decisionCalendar.map(([date, decision]) => <li key={date}><time>{date}</time><span>{decision}</span></li>)}</ol>
-        </section>
       </section>
 
       <section className="journey" aria-label="Round 2 process timeline">
@@ -425,7 +366,7 @@ export default function Home() {
                 <section className="path-card">
                   <span className="card-tag blue">Private signal track</span>
                   <h3>Listen to the ecosystem</h3>
-                  <p>Work directly with protocols, Ethereum-aligned organizations, institutions and security experts.</p>
+                  <p>TheDAO is working directly with protocols, Ethereum-aligned organizations, institutions and security experts.</p>
                   <ul><li>Major protocols and ecosystem players</li><li>Companies and public institutions</li><li>Security researchers and experts</li></ul>
                 </section>
                 <section className="path-card">
@@ -443,7 +384,6 @@ export default function Home() {
               </section>
 
               <div className="phase-output"><span>Phase output</span><strong>A defined initiative ready for co-funding</strong></div>
-              <aside className="foundation-target"><span>Launch target</span><strong>Build the board toward roughly 20 live initiatives by September 15.</strong></aside>
             </div>
             <ResourceShelf phase={1} stakeholder={stakeholder} onOpen={setOpenResource} />
           </article>
@@ -548,7 +488,7 @@ export default function Home() {
             <section className="closing-card">
               <p className="eyebrow">The complete loop</p>
               <h2>Fund the work.<br />Verify the progress.<br />Learn from adoption.</h2>
-              <div><a href="#top">Back to the start ↑</a><a href={assetUrl('round-2-process-map.pdf')} target="_blank" rel="noreferrer">Download the process map ↗</a></div>
+              <div><a href="#top">Back to the start ↑</a></div>
             </section>
           </article>
         </div>
