@@ -305,8 +305,8 @@ export default function Home() {
         <p className="eyebrow">Round 2 funding process</p>
         <h1>From a security problem<br />to measurable adoption.</h1>
         <p className="hero-copy">
-          Follow the four phases of Round 2. As you move through the process,
-          the guidance, checks and templates relevant to that moment appear alongside it.
+          Follow this interactive timeline for Round 2. As you move through the
+          process you'll find the relevant information at every stage.
         </p>
         <section className="stakeholder-picker" aria-labelledby="stakeholder-title">
           <div className="picker-heading">
